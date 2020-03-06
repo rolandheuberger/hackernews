@@ -43,7 +43,7 @@ fetch('https://hacker-news.firebaseio.com/v0/newstories.json')
                 var listItem = document.createElement('article');
                 listItem.innerHTML = '<h2 class="news-item__title"><a href="' + item.url + '" target="_blank">' + item.title + '</a></h2>';
                 listItem.innerHTML +='<span class="news-item__user">by ' + json.by + '</span>';
-                listItem.innerHTML +='<span class="news-item__time">' + json.time + '</span>';
+                listItem.innerHTML +='<span class="news-item__time">' + moment(json.time*1000).fromNow() + '</span>';
                 listItem.innerHTML +='<span class="news-item__hide">hide</span>';
                 listItem.innerHTML +='<span class="news-item__comments">' + json.descendants + ' comments</span>';
                 newsList.appendChild(listItem);
