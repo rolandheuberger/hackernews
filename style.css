@@ -25,7 +25,7 @@ main {
     text-align: center;
     transform: rotate(-20deg);
     width: 50%;
-    background: linear-gradient(to bottom, hsl(60, 100%, 60%) 25%, hsl(320, 100%, 60%));
+    /* background: linear-gradient(to bottom, hsl(60, 100%, 60%) 25%, hsl(320, 100%, 60%)); */
     /* -webkit-background-clip: text; */
     /* -webkit-text-fill-color: transparent; */
 }
