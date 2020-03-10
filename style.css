@@ -21,37 +21,83 @@ main {
 }
 
 .logo {
-    margin: 4rem auto;
+    margin: 2rem auto 4rem;
     text-align: center;
-    transform: rotate(-20deg);
-    width: 50%;
-    /* background: linear-gradient(to bottom, hsl(60, 100%, 60%) 25%, hsl(320, 100%, 60%)); */
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
+    transform: rotate(-11deg);
+    width: 80%;
+    position: relative;
+    height: 120px;
 }
+
+/* logo animation */
+.text {
+    fill: none;
+    stroke-width: 3;
+    stroke-linejoin: round;
+    stroke-dasharray: 80 190;
+    stroke-dashoffset: 0;
+    -webkit-animation: stroke 30s infinite linear;
+    animation: stroke 30s infinite linear;
+}
+
+  .text:nth-child(3n + 1) {
+    stroke: #ffff33;
+    -webkit-animation-delay: -10s;
+    animation-delay: -10s;
+}
+
+  .text:nth-child(3n + 2) {
+    stroke: #ff33bb;
+    -webkit-animation-delay: -20s;
+    animation-delay: -20s;
+}
+
+  .text:nth-child(3n + 3) {
+    stroke: #33bbff;
+    -webkit-animation-delay: -30s;
+    animation-delay: -30s;
+}
+  
+@-webkit-keyframes stroke {
+    100% {
+      stroke-dashoffset: -270;
+    }
+}
+
+  @keyframes stroke {
+    100% {
+      stroke-dashoffset: -270;
+    }
+}
+
+svg {
+    max-height: 200px;
+    font: 700 5em/1 sans-serif;
+    text-transform: uppercase;
+}
+
 .mobile {
     position: absolute;
-    top: 6.5rem;
+    top: 0rem;
     padding: 0.5em;
     font-size: 2rem;
 }
 
 .navbar__nav {
     position: fixed;
-    top: 9rem;
-    margin-left: -100vh;
+    top: 2rem;
+    margin-left: -105vw;
     transition: margin 600ms ease;
     background-color: var(--bg-primary);
     width: 100%;
-}
-
-.navbar__nav {
     list-style: none;
-    padding: 0;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    height: 90vh;
 }
+
 .mobile:hover + .navbar__nav,
 .navbar__nav:hover { margin-left: 0; }
 
@@ -177,6 +223,7 @@ footer {
         flex-direction: row;
         margin-left: 0;
         width: auto;
+        height: auto;
     }
 
     .nav__ele { padding: 0 1rem; }

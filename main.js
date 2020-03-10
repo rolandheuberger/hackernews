@@ -36,10 +36,14 @@ function loadList(offset, limit) {
         .then(function(json) {
             // console.log(json);
             var itemIDs =  json || [];
+
+            // cut the array from offset (0) to limit (30)
             var pageItemIDs = itemIDs.slice(offset, limit);
 
             if (pageItemIDs.length) {
+                // looping over the resonse json array of itemids
                 pageItemIDs.forEach( function( itemID ) {
+                    // get the item content
                     getItem( itemID, 'list' ,itemcount );
                     itemcount++;
                 });
@@ -74,14 +78,15 @@ function getItem( itemID, type, counter ) {
                 showItem( item, itemtype, counter );
             }
             if (typeof item !== null && itemtype === 'kids') {
-                // show comments
+                // show comment
                 showKid( item, itemtype );
             }
         })
     }
 
-    function showDomain(uri){
-        var r = /:\/\/(.[^/]+)/;
+    // shows urls domain only
+    function showDomain(uri) {
+        var r = /:\/\/(.[^/]+)/; // match ://, cature group to extract substring (.[^/]+), gets all caracters till /
         var domain = '';
 
         if (typeof uri !== 'undefined' && uri.length > 0) {
@@ -160,7 +165,7 @@ function getItem( itemID, type, counter ) {
     }
 
     function showKid(item) {
-       //  console.log(item);
+        //  console.log(item);
         if (typeof item !== 'undefined' && typeof item.deleted == 'undefined') {
             var item = item || {};
             var kidItem = document.createElement('div');

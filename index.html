@@ -9,7 +9,18 @@
 <body>
     <header>
         <div class="logo">
-            <h1>Hacker News</h1>
+            <svg viewBox="0 0 600 300">
+                <!-- Symbol-->
+                <symbol id="s-text">
+                  <text text-anchor="middle" x="50%" y="0" dy="2em">Hacker News</text>
+                </symbol>
+                <!-- Duplicate symbols-->
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+              </svg>
         </div>
         <nav class="navbar">
             <div class="mobile">&#9776;</div>
